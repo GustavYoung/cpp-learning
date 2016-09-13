@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include <windows.h>
 
 
 int main()
@@ -31,5 +31,6 @@ int main()
     }
     else{std::cout << "Probleme dans la lecture du fichier " << std::endl;}
     std::cout << "All done !" << std::endl;
+    Sleep(4000);
     return 0;
 }
