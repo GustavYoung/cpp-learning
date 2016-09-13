@@ -1,0 +1,4 @@
+Ayy, lmao !
+I want to know how to figure out the path from which this is running from though ;(
+I also want to know how to set up the declaration of the stream in such a way that it creates the file in the folder this is running from (wherever it might be)
+I'll figure it out soon though (i hope) ! 

@@ -1,0 +1,6 @@
+Testing Kek
+I think i might create an array to test my knowledge of both arrays and  the getline functions
+Doot Doot
+Thank you Lord Skeltal
+Update : so apparently the streams gets exhausted after reaching the EOF (end of file), so i had to create another stream to read this file.
+That was purely speculation on my part but i suppose that's what happened!
