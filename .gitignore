@@ -27,3 +27,9 @@
 *.exe
 *.out
 *.app
+
+# Code::Blocks custom stuff
+**/build
+**/obj
+*.cbp
+*.depend
