@@ -10,6 +10,7 @@ int main()
     std::string word, trial(""), scramble;
     std::cout << "Entrez le mot : " << std::endl;
     std::cin >> word ;
+    system("cls");
     scramble = shuffleWord(word);
     do{
         std::cout << "Quel est ce mot ? " << scramble << std::endl;
