@@ -14,9 +14,12 @@ int main()
     do{
         std::cout << "Quel est ce mot ? " << scramble << std::endl;
         std::cin >> trial;
-        if (trial.compare(word) != 0) trials++;
+        if (trial.compare(word) != 0){
+                trials++;
+                std::cout << "C'est faux !" << std::endl;
+        }
     }while(trial.compare(word) != 0);
-    std::cout << "Congrats, it took you " << trials << " attempts !" << std::endl;
+    std::cout << "Bravo, cela vous a pris " << trials << " essais !" << std::endl;
     return 0;
 }
 
