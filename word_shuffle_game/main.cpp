@@ -36,20 +36,38 @@ std::string shuffle(std::string word)
 
 
 void nouvelle_partie(int essai){
-    srand(time(0));
-    int choix(0), attempt(essai);
+
+    /** \brief Fonction qui gére une nouvelle partie de mot mystere.
+     *
+     * \param int: essai, le nombre d'essai l'utilsateur a pour deviner le mot mélangé?
+     * \return Cette fonction ne retourne rien.
+     *
+     */
+
+    srand(time(0)); // Generez un seed
+
+    system("cls"); // Clear console !
+
+    int choix(0), attempt(essai); /* Déclaration de variable 'choix' pour le choix entre saisir le mot ou utiliser le dictionnaire
+                                et la variable 'attempt' qui se décrementera apres chaque assai.*/
+
     std::string motchoisi,shuffled,guess;
-    std::vector<std::string> mots;
-    std::ifstream dicto("./dict.txt");
+    /*
+        motchoisi = Le mot mystere
+        shuffled = Le mot qui s'affichera à l'utilisateur
+        guess = La variable temporaire qui acceuillera les essais de l'utilisateur
+    */
+    std::vector<std::string> mots; // Tableau dynamique qui receuillera les mots trouvé dans le dossier
+    std::ifstream dicto("./dict.txt"); // Ouvrir le dossier
+
     if(dicto){
         std::string temp;
         while(getline(dicto,temp)){
-            mots.push_back(temp);
+            mots.push_back(temp); // Ajoute le mots au tableau dynamique.
         }
     }
     else
         std::cout << "Erreur le de 'louverture du dictionnaire" << std::endl;
-    for(int i(0);i<mots.size();i++) std::cout << mots[i] << std::endl;
     std::cout << "Voulez-vous ...\n1)Tapez le mot ?\n2)Auto-générez le mot a l'aide du dictionnaire ? " << std::endl;
     do{
        std::cin >> choix;
@@ -59,9 +77,9 @@ void nouvelle_partie(int essai){
         std::cin >> motchoisi;
     }
     else{
-        motchoisi = mots[rand() % mots.size()];
+        motchoisi = mots[rand() % mots.size()]; // Choisir un mot aléatoire entre les mots du dictionnaire et le mettre dans la variable 'motchoisi'
     }
-    shuffled = shuffle(motchoisi);
+    shuffled = shuffle(motchoisi); // On passe le mot choisi comme argument a la fonction qui mélange.
     while(attempt > 0)
     {
         std::cout << "Quel est ce mot ? " << shuffled << std::endl;
@@ -72,13 +90,25 @@ void nouvelle_partie(int essai){
         std::cout << "Il vous reste " << attempt << " essai !" << std::endl;
     }
     std::cout << "Vous avez perdu ! " << std::endl;
+    std::cout << "Le mot etait " << motchoisi << "!" << std::endl;
 }
 
 int main()
 {
-    int mode;
+    /** \brief La fonction principale
+     *
+     * \param Aucun
+     * \return 0 si tout se passe bien, sinon un autre entier naturel
+     *
+     */
+
+    int mode;/* Mode 1 = Facile;
+    Mode 2 = Moyen;
+    Mode 3 = Difficile;
+    */
     char cont;
     do{
+    system("cls"); // Clear console !
     std::cout << "Nouvelle partie de mot mystere, quelle mode de jeu voulez vous ?" << std::endl;
     std::cout << "1 - Facile (12 essais)." << std::endl;
     std::cout << "2 - Moyen (8 essais)." << std::endl;
