@@ -2,13 +2,18 @@
 #define PERSONNAGE_H_INCLUDED
 
 #include <string>
+#include "Arme.h"
 
 class Personnage
 {
 public:
     Personnage();
 
+    ~Personnage();
+
     Personnage(std::string name, std::string weapon_name, int weaponDamage);
+
+    void showStats() const;
 
     void attack(Personnage&);
 
@@ -30,11 +35,10 @@ private:
 
     int m_mana;
 
-    int m_weaponDamage;
-
     std::string m_name;
 
-    std::string m_weaponName;
+    Arme m_arme;
+
 };
 
 

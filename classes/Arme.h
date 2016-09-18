@@ -9,11 +9,15 @@ public:
 
     Arme();
 
+    ~Arme();
+
     Arme(std::string, int);
 
     void changeWeapon(std::string, int);
 
-    void showInfo();
+    void showInfo() const;
+
+    int getDamage() const;
 
 private:
 

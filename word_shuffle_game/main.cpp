@@ -35,7 +35,8 @@ std::string shuffle(std::string word)
 }
 
 
-void nouvelle_partie(int essai){
+void nouvelle_partie(int essai)
+{
 
     /** \brief Fonction qui gére une nouvelle partie de mot mystere.
      *
