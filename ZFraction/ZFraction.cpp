@@ -1,6 +1,10 @@
 #include "ZFraction.h"
 #include <iostream>
 
+int pgdc(int &a, int &b)
+{
+
+}
 
 ZFraction::ZFraction(int num, int denom)
 {
