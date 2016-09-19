@@ -23,10 +23,17 @@ private:
 };
 
 
-bool operator==(Duree const& a,Duree const& b);
+bool operator==(Duree const& a, Duree const& b);
 
-bool operator!=(Duree const& a,Duree const& b);
+bool operator!=(Duree const& a, Duree const& b);
 
 bool operator<(Duree const& a, Duree const& b);
+
+bool operator>(Duree const& a, Duree const& b);
+
+bool operator<=(Duree const& a, Duree const& b);
+
+bool operator>=(Duree const& a, Duree const& b);
+
 
 #endif // DUREE_H_INCLUDED

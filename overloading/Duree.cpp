@@ -41,6 +41,7 @@ bool Duree::estPlusPetitQue(Duree const& b) const
     return false;
 }
 
+
 /*
     Overloading operators
 */
@@ -58,3 +59,19 @@ bool operator<(Duree const& a, Duree const& b)
 {
     return a.estPlusPetitQue(b);
 }
+
+bool operator>(Duree const& a, Duree const& b)
+{
+    return !(a.estPlusPetitQue(b)) && a != b;
+}
+
+bool operator<=(Duree const& a, Duree const& b)
+{
+    return a < b || a == b;
+}
+
+bool operator>=(Duree const& a, Duree const& b)
+{
+    return a > b || a == b;
+}
+
