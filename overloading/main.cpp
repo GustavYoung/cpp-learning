@@ -3,7 +3,7 @@
 
 int main()
 {
-    Duree une(0,1,0);
+    Duree une;
     Duree deux(0,0,0);
     std::cout << "Hello world!" << std::endl;
     une.getDuree();deux.getDuree();

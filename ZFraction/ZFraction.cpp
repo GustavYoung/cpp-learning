@@ -1,11 +1,6 @@
 #include "ZFraction.h"
 #include <iostream>
 
-ZFraction::ZFraction()
-{
-
-}
-
 
 ZFraction::ZFraction(int num, int denom)
 {

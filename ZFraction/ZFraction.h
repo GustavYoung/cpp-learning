@@ -5,9 +5,7 @@ class ZFraction
 {
 public:
 
-    ZFraction();
-
-    ZFraction(int num=0, int denom=1);
+    ZFraction(int num = 0, int denom = 1);
 
     void getZFraction() const;
 
