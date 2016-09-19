@@ -1,21 +1,23 @@
 #include <iostream>
 
-int main()
+
+int pgdc(int a, int b)
 {
-    int a,b,c;
-    std::cout << "Hello world!" << std::endl;
-    std::cin >> a;
-    std::cin >> b;
-    std::cout << "";
-    c = 1;
-    int div(1),mod(1);
+    int mod;
     while(a % b != 0)
     {
-
         mod = a % b;
         a = b;
         b = mod;
     }
-    std::cout << b << std::endl;
+    return b;
+}
+int main()
+{
+    int a,b;
+    std::cout << "Hello world!" << std::endl;
+    std::cin >> a;
+    std::cin >> b;
+    std::cout << pgdc(a,b) << std::endl;
     return 0;
 }
