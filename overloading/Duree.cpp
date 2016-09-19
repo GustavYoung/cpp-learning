@@ -2,9 +2,8 @@
 #include <iostream>
 
 
-/*
-    Constructeurs et destructeur
-*/
+/// Constructeurs et destructeur
+
 
 Duree::Duree(int h, int m, int s) : m_heures(h), m_min(m), m_sec(s)
 {
@@ -16,18 +15,15 @@ Duree::~Duree()
 
 }
 
-/*
-    Getters
-*/
+/// Getters
 
 void Duree::getDuree()
 {
     std::cout << m_heures << ":" << m_min << ":" << m_sec << std::endl;
 }
 
-/*
-    Méthodes publiques de comparaison
-*/
+/// Méthodes publiques de comparaison
+
 bool Duree::estEgal(Duree const& b) const
 {
     return (m_heures == b.m_heures && m_min == b.m_min && m_sec == b.m_sec);

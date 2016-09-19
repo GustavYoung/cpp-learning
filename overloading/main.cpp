@@ -3,8 +3,8 @@
 
 int main()
 {
-    Duree une(2,5,2);
-    Duree deux(2,5,2);
+    Duree une(0,1,0);
+    Duree deux(0,0,0);
     std::cout << "Hello world!" << std::endl;
     une.getDuree();deux.getDuree();
     if (une > deux)
