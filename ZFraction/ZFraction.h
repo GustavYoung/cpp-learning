@@ -31,6 +31,14 @@ bool operator!=(ZFraction const& a, ZFraction const& b);
 
 bool operator<(ZFraction const& a, ZFraction const& b);
 
+bool operator<=(ZFraction const& a, ZFraction const& b);
+
+bool operator>(ZFraction const& a, ZFraction const& b);
+
+bool operator>=(ZFraction const& a, ZFraction const& b);
+
+
+
 
 
 

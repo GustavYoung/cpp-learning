@@ -28,10 +28,14 @@ ZFraction::ZFraction(int num, int denom)
 {
     m_defini = true;
     int diviseur = pgdc(num, denom);
-    if (diviseur == 0) {m_defini = false;}
-    else{
-    m_numerateur = num / diviseur;
-    m_denominateur = denom / diviseur;
+    if (diviseur == 0)
+    {
+        m_defini = false;
+    }
+    else
+    {
+        m_numerateur = num / diviseur;
+        m_denominateur = denom / diviseur;
     }
 }
 
@@ -40,22 +44,20 @@ std::string ZFraction::getString() const
     if(!m_defini)
         return "Fraction non definie !";
     if(m_denominateur == 1)
-        {
+    {
         std::string result;
         std::ostringstream convert;
         convert << m_numerateur;
         result = convert.str();
         return result;
-        }
-    std::string result,temp,temp2;
+    }
+    std::string result;
     std::ostringstream convert,denom;
     convert << m_numerateur;
-    temp = convert.str();
-    temp += "/";
+    result = convert.str();
+    result += "/";
     denom << m_denominateur;
-    temp2 = denom.str();
-    temp += temp2;
-    result = temp;
+    result += denom.str();
     return result;
 
 }
@@ -87,4 +89,19 @@ bool operator!=(ZFraction const& a, ZFraction const& b)
 bool operator<(ZFraction const& a, ZFraction const& b)
 {
     return a.estPlusPetit(b);
+}
+
+bool operator<=(ZFraction const& a, ZFraction const& b)
+{
+    return ( a < b || a == b);
+}
+
+bool operator>(ZFraction const& a, ZFraction const& b)
+{
+    return (!(a < b) && a != b);
+}
+
+bool operator>=(ZFraction const& a, ZFraction const& b)
+{
+    return (a > b || a == b);
 }
