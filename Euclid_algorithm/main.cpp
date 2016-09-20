@@ -1,7 +1,7 @@
 #include <iostream>
 
 
-int pgdc(int a, int b)
+int pgdc(int &a, int &b)
 {
     int mod;
     while(a % b != 0)
