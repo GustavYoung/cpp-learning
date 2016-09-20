@@ -50,3 +50,8 @@ bool operator==(ZFraction const& a, ZFraction const& b)
 {
     return a.estEgal(b);
 }
+
+bool operator!=(ZFraction const& a, ZFraction const& b)
+{
+    return (!(a == b));
+}

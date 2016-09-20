@@ -3,11 +3,11 @@
 
 int main()
 {
-    ZFraction test(48,5);
-    ZFraction testt(5,8);
+    ZFraction test(10,5);
+    ZFraction testt(2,2);
     ZFraction doot(4,0);
     ZFraction testtt;
-    if ( test == testt){std::cout << "TEST";}
+    if ( test != doot){std::cout << "TEST";}
     else std::cout << "ELSE BLOCK";
     return 0;
 }
