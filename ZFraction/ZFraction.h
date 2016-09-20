@@ -12,6 +12,14 @@ public:
 
     std::string getString() const;
 
+    ZFraction performeAddition(ZFraction const& b) const;
+
+    ZFraction performeSoustraction(ZFraction const& b) const;
+
+    ZFraction performeMultiplication(ZFraction const& b) const;
+
+    ZFraction performeDivision(ZFraction const& b) const;
+
     bool estEgal(ZFraction const& b) const;
 
     bool estPlusPetit(ZFraction const& b) const;
@@ -36,6 +44,15 @@ bool operator<=(ZFraction const& a, ZFraction const& b);
 bool operator>(ZFraction const& a, ZFraction const& b);
 
 bool operator>=(ZFraction const& a, ZFraction const& b);
+
+ZFraction operator+(ZFraction const& a, ZFraction const& b);
+
+ZFraction operator-(ZFraction const& a, ZFraction const& b);
+
+ZFraction operator*(ZFraction const& a, ZFraction const& b);
+
+ZFraction operator/(ZFraction const& a, ZFraction const& b);
+
 
 
 

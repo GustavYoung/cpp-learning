@@ -75,6 +75,38 @@ bool ZFraction::estPlusPetit(ZFraction const& b) const
     return nombre < nombre2;
 }
 
+ZFraction ZFraction::performeAddition(ZFraction const& b) const
+{
+    int resultat_num(m_numerateur * b.m_denominateur + b.m_numerateur * m_denominateur);
+    int resultat_denom(m_denominateur*b.m_denominateur);
+    ZFraction resultat(resultat_num,resultat_denom);
+    return resultat;
+}
+
+ZFraction ZFraction::performeSoustraction(ZFraction const& b) const
+{
+    int resultat_num(m_numerateur * b.m_denominateur - b.m_numerateur * m_denominateur);
+    int resultat_denom(m_denominateur*b.m_denominateur);
+    ZFraction resultat(resultat_num,resultat_denom);
+    return resultat;
+}
+
+ZFraction ZFraction::performeMultiplication(ZFraction const& b) const
+{
+    int resultat_num(m_numerateur * b.m_numerateur);
+    int resultat_denom(m_denominateur*b.m_denominateur);
+    ZFraction resultat(resultat_num,resultat_denom);
+    return resultat;
+}
+
+ZFraction ZFraction::performeDivision(ZFraction const& b) const
+{
+    int resultat_num(m_numerateur * b.m_denominateur);
+    int resultat_denom(m_denominateur*b.m_numerateur);
+    ZFraction resultat(resultat_num,resultat_denom);
+    return resultat;
+}
+
 
 bool operator==(ZFraction const& a, ZFraction const& b)
 {
@@ -104,4 +136,41 @@ bool operator>(ZFraction const& a, ZFraction const& b)
 bool operator>=(ZFraction const& a, ZFraction const& b)
 {
     return (a > b || a == b);
+}
+
+ZFraction operator+ (ZFraction const& a, ZFraction const& b)
+{
+    ZFraction resultat;
+
+    resultat = a.performeAddition(b);
+
+    return resultat;
+}
+
+
+ZFraction operator-(ZFraction const& a, ZFraction const& b)
+{
+    ZFraction resultat;
+
+    resultat = a.performeSoustraction(b);
+
+    return resultat;
+}
+
+ZFraction operator*(ZFraction const& a, ZFraction const& b)
+{
+    ZFraction resultat;
+
+    resultat = a.performeMultiplication(b);
+
+    return resultat;
+}
+
+ZFraction operator/(ZFraction const& a, ZFraction const& b)
+{
+    ZFraction resultat;
+
+    resultat = a.performeDivision(b);
+
+    return resultat;
 }

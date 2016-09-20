@@ -3,18 +3,11 @@
 
 int main()
 {
-    ZFraction test(4,7);
-    ZFraction frac(4,5);
+    ZFraction test(4,87);
+    ZFraction frac(15,48);
     ZFraction doot(45);
-    ZFraction testtt;
-    if (frac < test)
-    {
-        std::cout << "TEST" << std::endl;
-    }
-    else
-        std::cout << "ELSE BLOCK" << std::endl;
-
-    std::cout << doot.getString() << std::endl;
+    ZFraction fuck = test / frac;
+    std::cout << fuck.getString() << std::endl;
 
     return 0;
 }
