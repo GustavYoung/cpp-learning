@@ -1,15 +1,20 @@
 #ifndef ZFRACTION_H_INCLUDED
 #define ZFRACTION_H_INCLUDED
 
+#include <string>
+
+
 class ZFraction
 {
 public:
 
     ZFraction(int num = 0, int denom = 1);
 
-    void getZFraction() const;
+    std::string getString() const;
 
     bool estEgal(ZFraction const& b) const;
+
+    bool estPlusPetit(ZFraction const& b) const;
 
 private:
 
@@ -23,6 +28,9 @@ private:
 bool operator==(ZFraction const& a, ZFraction const& b);
 
 bool operator!=(ZFraction const& a, ZFraction const& b);
+
+bool operator<(ZFraction const& a, ZFraction const& b);
+
 
 
 

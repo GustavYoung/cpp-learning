@@ -1,5 +1,7 @@
 #include "ZFraction.h"
 #include <iostream>
+#include <string>
+#include <sstream>
 
 int pgdc(int a, int b)
 {
@@ -33,16 +35,42 @@ ZFraction::ZFraction(int num, int denom)
     }
 }
 
-void ZFraction::getZFraction() const
+std::string ZFraction::getString() const
 {
-    if(m_defini)std::cout << m_numerateur << "/" << m_denominateur << std::endl;
-    else std::cout << "Cette fraction est indefinie !" << std::endl;
+    if(!m_defini)
+        return "Fraction non definie !";
+    if(m_denominateur == 1)
+        {
+        std::string result;
+        std::ostringstream convert;
+        convert << m_numerateur;
+        result = convert.str();
+        return result;
+        }
+    std::string result,temp,temp2;
+    std::ostringstream convert,denom;
+    convert << m_numerateur;
+    temp = convert.str();
+    temp += "/";
+    denom << m_denominateur;
+    temp2 = denom.str();
+    temp += temp2;
+    result = temp;
+    return result;
+
 }
 
 bool ZFraction::estEgal(ZFraction const& b) const
 {
     if (!(m_defini) || !(b.m_defini)) return false;
     return (m_denominateur == b.m_denominateur && m_numerateur == b.m_numerateur);
+}
+
+bool ZFraction::estPlusPetit(ZFraction const& b) const
+{
+    double nombre = static_cast<double>(m_numerateur) / static_cast<double>(m_denominateur);
+    double nombre2 = static_cast<double>(b.m_numerateur) / static_cast<double>(b.m_denominateur);
+    return nombre < nombre2;
 }
 
 
@@ -54,4 +82,9 @@ bool operator==(ZFraction const& a, ZFraction const& b)
 bool operator!=(ZFraction const& a, ZFraction const& b)
 {
     return (!(a == b));
+}
+
+bool operator<(ZFraction const& a, ZFraction const& b)
+{
+    return a.estPlusPetit(b);
 }
