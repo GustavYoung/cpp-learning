@@ -20,6 +20,8 @@ public:
 
     ZFraction performeDivision(ZFraction const& b) const;
 
+    void afficher(std::ostream &flux) const;
+
     bool estEgal(ZFraction const& b) const;
 
     bool estPlusPetit(ZFraction const& b) const;
@@ -52,6 +54,8 @@ ZFraction operator-(ZFraction const& a, ZFraction const& b);
 ZFraction operator*(ZFraction const& a, ZFraction const& b);
 
 ZFraction operator/(ZFraction const& a, ZFraction const& b);
+
+std::ostream &operator<<(std::ostream &flux, ZFraction const& b);
 
 
 

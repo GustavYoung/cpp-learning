@@ -28,7 +28,7 @@ ZFraction::ZFraction(int num, int denom)
 {
     m_defini = true;
     int diviseur = pgdc(num, denom);
-    if (diviseur == 0)
+    if ( diviseur == 0 )
     {
         m_defini = false;
     }
@@ -107,6 +107,29 @@ ZFraction ZFraction::performeDivision(ZFraction const& b) const
     return resultat;
 }
 
+void ZFraction::afficher(std::ostream &flux) const
+{
+    if(!m_defini)
+    {
+        flux << "Fraction non definie !";
+        return;
+    }
+    if(m_denominateur == 1)
+    {
+        std::ostringstream convert;
+        convert << m_numerateur;
+        flux << convert.str();
+        return;
+    }
+    std::string result;
+    std::ostringstream convert,denom;
+    convert << m_numerateur;
+    result = convert.str();
+    result += "/";
+    denom << m_denominateur;
+    result += denom.str();
+    flux << result;
+}
 
 bool operator==(ZFraction const& a, ZFraction const& b)
 {
@@ -173,4 +196,11 @@ ZFraction operator/(ZFraction const& a, ZFraction const& b)
     resultat = a.performeDivision(b);
 
     return resultat;
+}
+
+
+std::ostream& operator<<(std::ostream &flux, ZFraction const& b)
+{
+    b.afficher(flux);
+    return flux;
 }

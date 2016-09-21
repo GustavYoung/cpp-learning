@@ -3,11 +3,14 @@
 
 int main()
 {
-    ZFraction test(4,87);
-    ZFraction frac(15,48);
-    ZFraction doot(45);
-    ZFraction fuck = test / frac;
-    std::cout << fuck.getString() << std::endl;
-
-    return 0;
+    ZFraction test(6,3);
+    ZFraction doot(666,0);
+    ZFraction f1(test+doot);
+    ZFraction f2(test/doot);
+    ZFraction f3(test*doot);
+    ZFraction f4(test-doot);
+    std::cout << "+ : " << test+doot << "    " << f1 << std::endl;
+    std::cout << "/ : " << test/doot << "    " << f2 << std::endl;
+    std::cout << "* : " << test*doot << "    " << f3 << std::endl;
+    std::cout << "- : " << test-doot << "    " << f4 << std::endl;
 }
