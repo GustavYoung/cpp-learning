@@ -58,9 +58,4 @@ ZFraction operator/(ZFraction const& a, ZFraction const& b);
 std::ostream &operator<<(std::ostream &flux, ZFraction const& b);
 
 
-
-
-
-
-
 #endif // ZFRACTION_H_INCLUDED

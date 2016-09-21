@@ -24,7 +24,7 @@ int pgdc(int a, int b)
     return b;
 }
 
-ZFraction::ZFraction(int num, int denom)
+ZFraction::ZFraction(int num, int denom) : m_numerateur(num), m_denominateur(denom)
 {
     m_defini = true;
     int diviseur = pgdc(num, denom);
@@ -163,39 +163,23 @@ bool operator>=(ZFraction const& a, ZFraction const& b)
 
 ZFraction operator+ (ZFraction const& a, ZFraction const& b)
 {
-    ZFraction resultat;
-
-    resultat = a.performeAddition(b);
-
-    return resultat;
+    return a.performeAddition(b);
 }
 
 
 ZFraction operator-(ZFraction const& a, ZFraction const& b)
 {
-    ZFraction resultat;
-
-    resultat = a.performeSoustraction(b);
-
-    return resultat;
+    return a.performeSoustraction(b);
 }
 
 ZFraction operator*(ZFraction const& a, ZFraction const& b)
 {
-    ZFraction resultat;
-
-    resultat = a.performeMultiplication(b);
-
-    return resultat;
+    return a.performeMultiplication(b);
 }
 
 ZFraction operator/(ZFraction const& a, ZFraction const& b)
 {
-    ZFraction resultat;
-
-    resultat = a.performeDivision(b);
-
-    return resultat;
+    return a.performeDivision(b);
 }
 
 
